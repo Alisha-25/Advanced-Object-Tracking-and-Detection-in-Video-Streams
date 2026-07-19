@@ -1,0 +1,14 @@
+# Install PyTorch and torchvision using the command appropriate for your CPU/CUDA setup:
+# https://pytorch.org/get-started/locally/
+torch
+torchvision
+numpy>=1.26
+Pillow>=10.0
+PyYAML>=6.0
+scipy>=1.11
+opencv-python>=4.8
+motmetrics>=1.4
+torchmetrics[detection]>=1.3
+pycocotools>=2.0.7
+jupyter>=1.0
+nbconvert>=7.0

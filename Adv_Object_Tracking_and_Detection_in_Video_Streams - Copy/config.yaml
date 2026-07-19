@@ -1,0 +1,45 @@
+# Change only these path values to use another machine or dataset location.
+paths:
+  # The supplied archive. This is only used by src/prepare_dataset.py.
+  dataset_zip: "./Downloads/archive (2).zip"
+  # After extraction this must contain train/ and test/ (for example: .../data/MOT17).
+  dataset_root: ".Adv_Object_Tracking_and_Detection_in_Video_Streams/MOT17"
+  output_root: "./results"
+  checkpoint_path: "./results/checkpoints/fasterrcnn_best.pt"
+
+data:
+  # Only FRCNN variants are selected: DPM/SDP variants contain duplicate frames.
+  train_sequences: ["MOT17-02-FRCNN", "MOT17-04-FRCNN", "MOT17-09-FRCNN"]
+  validation_sequence: "MOT17-05-FRCNN"
+  train_frame_stride: 5
+  validation_frame_stride: 5
+  min_visibility: 0.0
+
+model:
+  architecture: "fasterrcnn_resnet50_fpn"
+  pretrained_backbone: true
+  min_size: 640
+  max_size: 1280
+
+training:
+  seed: 42
+  epochs: 8
+  batch_size: 2
+  learning_rate: 0.005
+  momentum: 0.9
+  weight_decay: 0.0005
+  num_workers: 0  # Keep 0 on Windows; increase on Linux if desired.
+
+tracking:
+  detection_score_threshold: 0.55
+  base_iou_threshold: 0.30
+  min_iou_threshold: 0.12
+  velocity_relaxation: 0.18
+  max_age: 20
+  min_hits: 3
+  process_noise: 1.0
+  measurement_noise: 10.0
+
+runtime:
+  device: "auto"  # "auto", "cuda", or "cpu"
+  max_frames_for_demo: 300

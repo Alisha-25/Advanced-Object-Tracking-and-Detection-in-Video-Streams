@@ -1,0 +1,39 @@
+paths:
+  dataset_zip: C:/Users/Downloads/archive (2).zip
+  dataset_root: /kaggle/input/mot-17/MOT17
+  output_root: /content/drive/MyDrive/Colab Notebooks/Adv_Object_Tracking_and_Detection_in_Video_Streams/results
+  checkpoint_path: /content/drive/MyDrive/Colab Notebooks/Adv_Object_Tracking_and_Detection_in_Video_Streams/results/checkpoints/fasterrcnn_best.pt
+data:
+  train_sequences:
+  - MOT17-02-FRCNN
+  - MOT17-04-FRCNN
+  - MOT17-09-FRCNN
+  validation_sequence: MOT17-05-FRCNN
+  train_frame_stride: 5
+  validation_frame_stride: 5
+  min_visibility: 0.0
+model:
+  architecture: fasterrcnn_resnet50_fpn
+  pretrained_backbone: true
+  min_size: 640
+  max_size: 1280
+training:
+  seed: 42
+  epochs: 4
+  batch_size: 2
+  learning_rate: 0.005
+  momentum: 0.9
+  weight_decay: 0.0005
+  num_workers: 0
+tracking:
+  detection_score_threshold: 0.55
+  base_iou_threshold: 0.3
+  min_iou_threshold: 0.12
+  velocity_relaxation: 0.18
+  max_age: 20
+  min_hits: 3
+  process_noise: 1.0
+  measurement_noise: 10.0
+runtime:
+  device: cuda
+  max_frames_for_demo: 300
