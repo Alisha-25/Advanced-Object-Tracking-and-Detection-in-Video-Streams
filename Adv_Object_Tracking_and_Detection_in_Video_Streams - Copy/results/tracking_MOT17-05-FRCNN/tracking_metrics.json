@@ -1,0 +1,14 @@
+{
+  "num_frames": 837,
+  "mota": 0.17478675726471016,
+  "motp": 0.2419744799479413,
+  "idf1": 0.28023598820059,
+  "precision": 0.8318397469688983,
+  "recall": 0.22813358392366634,
+  "num_switches": 50,
+  "mostly_tracked": 3,
+  "mostly_lost": 100,
+  "sequence": "MOT17-05-FRCNN",
+  "iou_threshold": 0.5,
+  "predictions": "/content/drive/MyDrive/Colab Notebooks/CV_asgn2/results/tracking_MOT17-05-FRCNN/tracking_results.txt"
+}

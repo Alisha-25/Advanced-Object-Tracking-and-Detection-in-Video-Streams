@@ -1,0 +1,17 @@
+{
+  "sequence": "MOT17-05-FRCNN",
+  "frames_processed": 300,
+  "mot_rows_written": 1897,
+  "detection_source": "fine-tuned Faster R-CNN",
+  "temporal_consistency": "Kalman prediction + speed-adaptive IoU association",
+  "tracking_parameters": {
+    "detection_score_threshold": 0.55,
+    "base_iou_threshold": 0.3,
+    "min_iou_threshold": 0.12,
+    "velocity_relaxation": 0.18,
+    "max_age": 20,
+    "min_hits": 3,
+    "process_noise": 1.0,
+    "measurement_noise": 10.0
+  }
+}
